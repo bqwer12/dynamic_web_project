@@ -1,0 +1,775 @@
+<html>
+   <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href = "css/bootstrap.css" />
+  <script src = "js/bootstrap.min.js" type = "javascript"></script>
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+      <style>
+      body{
+         margin: 0px;
+      }
+         .nave{
+            
+            position: fixed;
+            width: 200px;
+            height: 80%;
+            background-color: #F6E0F2;
+            
+            top: 0px;
+            left: : 0px;
+            -webkit-animation-name: menubar;
+             -webkit-animation-duration: 0.5s;
+             animation-name: menubar;
+             animation-duration: 0.5s;
+         }
+         
+         @keyframes menubar {
+          
+          0%   {background-color:#F6E0F2; left: -15px;top: 0px;}
+          100% {background-color:#F6E0F2; left: 0px;top: 0px;}
+         }
+         .name div{
+            list-style: none;
+            text-decoration: none;
+
+         }
+         .logo{
+            float: left;
+            
+         }
+         .logo-f{
+            float: left;
+            margin-bottom: 28px; 
+         }
+         .logo img{
+            float: left;
+            width: 70px;
+            height: 60px
+
+         }
+         .logo_a{
+            display:inline-block;
+            
+            
+         }
+         .logo_text{
+            text-align: 1em;
+            display: inline-block;
+            
+
+         }
+         .logo_text h5{
+            padding-top: 15px;
+            float: left;
+            display: inline-block;
+            margin: 0px;
+            font-size: 0.8em;
+
+         }
+         .logo_text h6{
+            margin: 0px;
+            font-size: 0.6em;
+         }
+         .logo_text1 li{
+            margin-top: 3px;
+            list-style: none;
+         }
+         .logo_text1 a{
+            text-decoration: none;
+            color: black;
+         }
+         .logo_text1 a:hover{
+            opacity: 0.1;
+         }
+         .pro{
+
+            display: inline-block;
+            float: right;
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+            margin-left:10px;
+            /*아래 */
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            
+            border-radius: 30px;
+         }
+         .start{
+            font-size: 0.9em;
+            padding-bottom: 5px;
+            border-bottom: 1px solid gray; 
+            padding-top: 85px;
+            font-weight: bold;
+         }
+         .start_1{
+            font-size: 1.1em;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-weight: bold;
+         }
+         .start_1:hover{
+            opacity: 0.8;
+         }
+         .logo_pic{
+            padding-left: 10px;
+            display: block;
+            float: left;
+            width: 50px;
+            height: 40px;
+            overflow: hidden;
+            padding-top: 5px;
+            padding-right: 5px;
+            /*아래 */
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+         .content-head{
+            
+            height: 70px;
+            
+            display: block;
+            /*border-bottom: 1px solid gray;*/
+            background-color: #EBE7EB;
+         }
+
+         .profile{
+            margin-top: 10px;
+            float: right;
+            display: block;
+            right: 0px;
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            /*아래 */
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+         }
+         .user-state{
+            display: inline-block;
+            float: right;
+         }
+         #user-name{
+            float: right;
+            
+            padding-top: 16.3px;
+            padding-right: 10px;
+            padding-left: 5px;
+            display: inline-block;
+            text-align: right;
+         }
+         /*.menu{
+         display: inline-block;
+         float: left;
+         font-size: 1.5em;
+         margin-top: 20px;
+         }
+         */
+         .content{
+            display: block;
+            background-color: snow;
+
+            
+         }
+         .content > div:first-child{
+               font-size: 1.5em;
+               display: inline-block;
+               margin-left: 20%;
+               margin-bottom: 2%;
+            }
+         .foot{
+            
+            text-align: center;
+            background-color: #F2F1F2;
+         }
+         #hidden{
+            position: absolute;
+            background-color: skyblue;
+            list-style: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            
+            
+            top: 60px;
+            right: 10px;
+             -webkit-animation-name: profile;
+             -webkit-animation-duration: 0.5s;
+             animation-name: profile;
+             animation-duration: 0.5s;
+         }
+
+         @keyframes profile {
+          
+          0%   {background-color:#050099; right: :10px; top:40px;}
+          100% {background-color:skyblue; right: :10px; top:60px;}
+         }
+         
+            .item{
+               display: inline-block;
+               text-align: left;
+            }
+            .itemlist{
+               border-bottom: 1px solid black;
+               width: 60%;
+            }
+            .user_list{
+               width: 60%;
+               padding:25px 0px; 
+               border-bottom: 1px solid gray;
+            }
+            .user_conL div{
+               width: 60%;
+               display: inline-block;
+               margin-left: auto;
+               text-align: left;
+               border-bottom: 1px dotted orange;
+            }
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.function_list{
+         border: 1px solid black;
+         width: 65%;
+        border-radius: 10px;
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+      .function{
+        display: inline-block;
+        padding: 2% 6.5%;
+        margin: 3% 1% ;
+        border-radius: 10px;
+        background-color: #3CAEFF;
+        color: white;
+        position: relative;
+
+          /*드레그안되게하기*/
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+      }
+      textarea{
+        
+      }
+      #coding_pic{
+
+        width: 65%;
+      }
+      #language{
+        width: 65%;
+      }
+      .box{
+        display: inline;
+        width: width: 65%;
+        overflow-y: scroll;
+      }
+/*//////////////////////////////////////////////////////////////////////////////*/
+      #menu_main{
+        display: inline-block;
+        position: fixed;
+        left: 2%;
+        top : 47%;
+        font-size: 1.5em;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        padding : 10px;
+        width: 14%;
+        text-align: center;
+        
+      }
+
+
+      .function:hover{
+        background-color: #15C7D5;
+      }
+      .submit_style{
+        display: inline-block;
+        text-align: center;
+      float: right;
+     
+        text-align: center;
+        line-height: 50px;
+        color: black;
+        width: 25%;
+        height: 5%;
+        border : 1px solid black;
+        border-radius: 5px;
+        background-color: #BEE1E5; 
+      }
+      .submit_style:hover{
+        background-color: #CCF1F6;
+      }
+      .function_list_1_5{
+        padding-bottom: 2%;
+
+      }
+/*//////////////////////////////////////////////////////////////////////////////*/
+         @media (max-width: 600px) {
+            .nave{
+            width: 90px;
+            height: 90%;
+         }
+            .start_1{
+
+               display: none;
+            }
+            .logo_text{
+               display: none;
+            }
+            .start{
+               padding-top: 90px;
+               font-size: 0.9em;
+            }
+            #site{
+               padding-top: 190px;
+            }
+            .logo_pic{
+               width: 65px;
+               height: 55px;
+            }
+            .content-head{
+               height: 65px;
+            }
+            
+            .menu{
+               display: none;
+               font-size: 1.3em;
+               padding : 5px 2px;
+               border: 1px solid gray;
+               background-color: F6E0F2;
+               border-radius: 5px;
+               margin-top: 5px
+            }
+            #user-name{
+               display: none;
+            }
+            .profile{
+            width: 50px;
+            height: 50px;
+            margin-top: 10px; 
+         }
+           #menu_main{
+        width: 14.5%;
+        top : 42%;
+        font-size: 1.2em;
+        left: 2%;
+        padding : 1%;
+        
+      }
+  
+      .box{
+        height: 30%;
+      }
+      }
+      .submit_style{
+        margin-right: 2%;
+        line-height: 35px;
+      }
+
+
+      </style>
+      <script>
+        var num = 0;
+        function insertAtCursor(myField, myValue)  
+
+          {
+             //IE support
+             if (document.selection)
+
+             {
+                myField.focus();
+                sel = document.selection.createRange();
+                sel.text = myValue;
+             }
+             // Chrome, Firefox, Netscape support
+             else if ((myField.selectionStart)||(myField.selectionStart == 0))
+
+             {
+                var startPos = myField.selectionStart;
+                var endPos = myField.selectionEnd;
+                myField.value = myField.value.substring(0, startPos)
+
+                                    + myValue
+                                    + myField.value.substring(endPos, myField.value.length);
+             }
+
+             else
+
+             {
+                myField.value += myValue;
+             }
+          }
+
+          function values(num){
+        if (num == 0){
+          document.frm.nums.value = "";
+        }
+
+        else if (num == 1) {
+          return " short";
+        }
+
+        else if (num == 2) {
+          return " int";
+        }
+
+        else if (num == 3) {
+          return "long";
+        }else if (num == 4) {
+          return "float";
+        }else if (num == 5) {
+          return "double";
+        }else if (num == 6) {
+          return "char";
+        }else if (num == 7) {
+          return "for(){\n}";
+        }else if (num == 8) {
+          return "while(){\n}";
+        }else if (num == 9) {
+          return "if(){\n}";
+        }else if (num == 10) {
+          return "switch(){\n}";
+        }else if (num == 11) {
+          return "short";
+        }else if (num == 12) {
+          return "int";
+        }else if (num == 13) {
+          return "long";
+        }else if (num == 14) {
+          return "float";
+        }else if (num == 15) {
+          return "double";
+        }else if (num == 16) {
+          return "char";
+        }
+
+
+        if(function_list_1.style.display=="none") {
+             function_list_1.style.display="block";
+             
+           }
+      }
+
+
+
+
+         function view() {
+           if(hidden.style.display=="none") {
+             hidden.style.display="block";
+             BT.value = "닫힘";
+           }
+           else {
+             hidden.style.display="none";
+             BT.value = "열림";
+           }
+         }
+
+
+
+         ///////////////////////////////////////////////메뉴옮기기 /////////////////////////////////
+          function chang(){
+             if(function_list_1.style.display=="none") {
+             function_list_1.style.display="block";
+             coding_main.style.display = "none"
+           }
+          }
+
+          function chang1(){
+             if(function_list_2.style.display=="none") {
+             function_list_2.style.display="block";
+             coding_main.style.display = "none"
+           }
+          }
+
+          function chang2(){
+             if(function_list_3.style.display=="none") {
+             function_list_3.style.display="block";
+             coding_main.style.display = "none";
+           }
+          }
+          ////////////////////////////////// 함수버튼//////////////////////////////
+          function chang_1(){
+             if(function_list_1_1.style.display=="none") {
+             function_list_1_1.style.display="block";
+             function_list_1.style.display = "none";
+           }
+          }
+          function chang_2(){
+             if(function_list_1_2.style.display=="none") {
+             function_list_1_2.style.display="block";
+             function_list_1_1.style.display = "none";
+           }
+          }
+          function chang_3(){
+             if(function_list_1_3.style.display=="none") {
+             function_list_1_3.style.display="block";
+             function_list_1_2.style.display = "none";
+           }
+          }
+          function chang_4(){
+             if(function_list_1_4.style.display=="none") {
+             function_list_1_4.style.display="block";
+             function_list_1_2.style.display = "none";
+           }
+          }
+         ////////////////////////////////// 변수버튼////////////////////////////// 
+        function chang_5(){
+             if(function_list_2_1.style.display=="none") {
+             function_list_2_1.style.display="block";
+             function_list_2.style.display = "none";
+            function_list_1_2.style.display = "none";
+           }
+          }
+          function chang_6(){
+             if(function_list_2_1.style.display=="none") {
+             function_list_2_1.style.display="block";
+             function_list_2.style.display = "none";
+             function_list_2_2.style.display = "none";
+             function_list_1_1.style.display = "none";
+
+           }
+          }
+          
+          ////////////////////////////////// 기능버튼//////////////////////////////  
+          function chang_7(){
+             if(function_list_3_1.style.display=="none") {
+             function_list_3_1.style.display="block";
+             function_list_3.style.display = "none";
+             function_list_2.style.display = "none";
+
+           }
+          }
+
+          function chang_8(){
+             if(function_list_3_2.style.display=="none") {
+             function_list_3_2.style.display="block";
+             function_list_3.style.display = "none";
+
+           }
+          }
+          function chang_9(){
+             if(function_list_3_3.style.display=="none") {
+             function_list_3_3.style.display="block";
+             function_list_3.style.display = "none";
+
+           }
+          }
+          function chang_10(){
+             if(function_list_3_4.style.display=="none") {
+             function_list_3_4.style.display="block";
+             function_list_3.style.display = "none";
+
+           }
+          }
+          function chang_11(){
+             if(function_list_1.style.display=="none" || function_list_1_1.style.display=="none" || function_list_1_2.style.display=="none" || function_list_1_3.style.display=="none" || function_list_1_4.style.display=="none" || function_list_2.style.display=="none" ||function_list_2_1.style.display=="none" || function_list_2_2.style.display=="none" || function_list_3.style.display=="none" || function_list_3_1.style.display=="none" || function_list_3_2.style.display=="none" || function_list_3_3.style.display=="none" || function_list_3_4.style.display=="none" || function_list_1_5.style.display=="none" || function_list_1_6.style.display=="none" || function_list_1_7.style.display == "none") {
+             coding_main.style.display="block";
+             function_list_1.style.display="none";
+             function_list_1_1.style.display="none" ;
+             function_list_1_2.style.display="none" ;
+             function_list_1_3.style.display="none" ;
+             function_list_1_4.style.display="none" ;
+             function_list_2.style.display="none";
+             function_list_2_1.style.display="none" ;
+             function_list_2_2.style.display="none";
+             function_list_3.style.display="none";
+             function_list_3_1.style.display="none" ;
+             function_list_3_2.style.display="none" ;
+             function_list_3_3.style.display="none";
+             function_list_3_4.style.display="none";
+             function_list_1_5.style.display="none";
+             function_list_1_6.style.display="none";
+             function_list_1_7.style.display = "none";
+           }
+          }
+           function chang_12(){
+             if(function_list_1_2.style.display!="none" || function_list_1_3.style.display=="none" || function_list_1_4.style.display=="none") {
+             function_list_1_5.style.display="block";
+           }
+          }
+          function chang_13(){
+            if (function_list_1_2.style.display!="none" || function_list_1_3.style.display=="none" || function_list_1_4.style.display=="none") {
+              function_list_1_6.style.display = "block";
+              function_list_1_1.style.display = "none";
+              
+            }
+          }
+          function chang_14(){
+            if (function_list_1_7.style.display=="none") {
+              function_list_1_7.style.display = "block";
+              function_list_1_1.style.display="none";
+            }
+          }
+          function selectnum(n)
+          {
+            num = n;
+            if (0<num && 7>num) {
+            chang_12();
+            } else if (num <11){
+              chang_13();
+            }else{
+
+            }
+          }
+          
+      </script>
+   </head>
+   <body>
+         <div id="hidden" style="display:none""> 
+            <li ><a href="mypage2.jsp">마이페이지</a></li>
+            <li><a onclick ="logout()" value="로그아웃">로그아웃</a></li>
+         </div>
+      
+      <div class="content-head">
+            <div class="user-state">
+              <div id="user-name" align="right">Lee Myeong Gyu</div>
+            <div class="profile" id="BT" onclick="view()" style="background-image: url(pic/contacts.png);"> 
+            </div>
+            
+            </div>
+         <div>
+         
+
+
+            <div class="logo_a" id="lg" onclick="view1()">
+               <div class="logo"  href="index_1.html">
+                  <a href="main.html"><img " value="img"  class="pro" src=" pic/logo.png"" alt="profile"></a>
+               </div>
+               <div class="logo_text">
+                  <h5>Pooming</h5>
+                  <h5>Pooming</h5>
+                  <h6>Make Easy Coding</h6>
+               </div>
+            </div>
+         </div>
+         <div class="menu"></div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="coding.html">코딩하기</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="mycode.jsp">나의코딩</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="lab.html">실험실</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="question_form.html">기능문의</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+      <center>
+      <div class="content">
+        <form name="project-name">
+          <!--
+         <h1 style="display: inline">제목</h1>
+          -->
+         <span>
+          <input name="project" id ="projname" style="border: 0;padding-top: 10px;text-align: center; font-size: 25;" placeholder="제목">
+         </span>
+          </form>
+           </center>
+          <!-- ------------------------------------------------------ -->
+          <center>
+              <form name='input_form' method='post' >
+                <div class="coding_pic">
+                  <textarea class="box" id="coding" name='entry_body' style="width: 65%;" rows="10">
+                  </textarea>
+                </div>
+             
+                    </center>
+                    </form>
+                     </div>
+               </div>
+
+                
+   </div>
+              
+           <!-- ------------------------------------------------------ -->
+           <center>
+          <p style="margin-top:20">
+            <a onclick="upload()">SAVE</a>
+            <a style="margin-left: 30" href="coding.html">Cancel</a>
+          </p>
+        </center>
+      </div>
+      </center>
+      <div class="foot">
+        <div>제작자 : YT & MG - 교내 실습 프로젝트</div>
+          <div>주소 : 서울특별시 노원구 화랑로 815 삼육대학교</div>
+       </div>
+    <form action=""></form>
+   </body>
+</html>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	AJAX.call("session.jsp", null, function (data) {
+		var id = data.trim();
+		if (id == "null") {
+			window.location.href = "index.html";
+		}
+		else {
+			start(id);
+		}
+	});
+});
+function start(id) {
+	
+}
+function logout() {
+	if(confirm("로그아웃 하시겠습니까?") == true) {
+		AJAX.call("logout.jsp", null, function (data) {
+			window.location.href = "index.html";
+		});
+
+	}
+}
+var pagectx = {};
+function start(id) {
+	pagectx.id = id;
+}
+function upload() {
+	if (check() == false) return; //projname 프로젝트 이름
+	
+	// make the HTTP request in a form of the "Form data"
+	var params = new FormData();
+	params.append("id", pagectx.id);
+	params.append("projname",$("#projname").val().trim());
+	params.append("desc",$("#coding").val().trim());
+	
+	AJAX.formCall("question2.jsp", params, function(data) {
+		alert("작성글을 업로드하였습니다.");
+		window.location.href = "main.html";
+	});
+	
+}
+
+function check() {
+	var pass = $("#coding").val().trim();
+	var prjn = $("#projname").val().trim();
+	if (pass == "") {
+		alert("코드를 입력해주세요.");
+		return false;
+	}
+	if (prjn == "") {
+		alert("프로젝트 명을 입력해주세요.");
+		return false;
+	}
+	return true;
+}
+</script>

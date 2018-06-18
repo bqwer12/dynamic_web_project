@@ -1,0 +1,136 @@
+<html>
+<head>
+	<meta charset="utf-8">
+ <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>3-21</title>
+<style>
+body {
+	background-color: #ACD1E9;
+}
+body h1 {
+	position: absolute;
+	margin-top: 30%;
+	left: 50%;
+	margin-left: -64;
+}
+body table {
+	width: 70%;
+	border:0;
+	position: absolute;
+	border-radius: 10px;
+	left: 57%;
+	top: 52%;
+	margin-left: -150px;
+	margin-top: -150px;
+}
+
+</style>
+</head>
+<body leftmargin="0" topmargin = "0" marginwith = "0" marginheight = "0">
+<h1 style="color:white"><font style = "font-family:고딕">프밍프밍</font></h1>
+<table id = "test" width = "43%" cellpadding = "5"cellspacing = "1" bgcolor = "#15E4CC">
+<tr>
+<td colspan = "2" align="center" bgcolor="#C6DAD6"><font color = "#FFFFFF"><B>Sign in</b></font></td>
+</tr>
+<center>
+<!--아이디-->
+<tr>
+<td align = "right" bgcolor = "#E8D0A9"><font color = "#FF9900"></font>아이디&nbsp;</td>
+<td bgcolor = "white">
+<input type = "text" id = "id"  maxlength = "12">
+<font color = "black" size = "2">(4~12자 영문자/숫자 가능)</font>
+</td>
+</tr>
+<!--비밀번호-->
+<tr>
+<td align = "right" bgcolor = #E8D0A9><font color = "#FF9900"></font>비밀번호&nbsp;</td>
+<td bgcolor = "white">
+<input type = "password" id = "pass" maxlength = "8">
+<font color = "black" size = "2">(4~8자 이내로 만들어주세요)</font>
+</td>
+</tr>
+<tr>
+<td align = "right" bgcolor = #E8D0A9><font color = "#FF9900"></font>닉네임&nbsp;</td>
+<td bgcolor = "white">
+<input type = "text" id = "name" maxlength = "12">
+<font color = "black" size = "2">(4~12자 이내로 만들어주세요)</font>
+</td>
+</tr>
+<tr bgcolor = "#FFFFFF">
+<td height = "30" colspan = 2 align="center" bgcolor="#B7AFA3" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+<a onclick ="login()">login</a>
+<a onclick ="signup()">join</a>
+</center>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+});
+
+function signup() {
+	if (check() == false) return;
+	
+	var uid = $("#id").val().trim();	//document.getElementById("id")랑 $("#id")가 같다.
+	var uname = $("#name").val().trim();
+	var upass = $("#pass").val().trim();
+	
+	
+	var params = "uid=" + uid + "&uname=" + uname + "&upass=" + upass;	//중요
+	
+	AJAX.call("join.jsp", params, function(data) {		//중요 http url 형태로 params를 넣는다  function(data)는 jsp에서 out.println() 된 값이 넘어온다
+		var code = data.trim();
+		if (code == "EX") {
+			alert("이미 존재하는 아이디입니다.");
+		}
+		else if (code == "PS") {
+			alert("패스워드가 일치하지 않습니다.");
+		}
+		else if (code == "OK") {
+			alert("아이디가 생성되었습니다.");
+			window.location.href = "index.html";
+		}
+	});
+}
+
+function login() {
+	window.location.href = "index.html";
+}
+
+function check() {
+	var uid = $("#id").val().trim();	//JQuery val는 값, trim은 앞뒤 공백을 제외
+	if (uid == "") {
+		alert("아이디를 입력해주세요.");
+		return false;
+	}
+	var uname = $("#name").val().trim();
+	if (uname == "") {
+		alert("이름을 입력해주세요.");
+		return false;
+	}
+
+	var upass = $("#pass").val().trim();
+	if (upass == "") {
+		alert("패스워드를 입력해주세요.");
+		return false;
+	}
+	/*var upass2 = $("#pass2").val().trim();
+	if (upass2 == "") {
+		alert("패스워드 확인을 입력해주세요.");
+		return false;
+	}
+	if (upass != upass2)
+		{
+		alert("패스워드와 패스워드 확인이 일치하지 않습니다");
+		return false;
+	}
+	*/
+	return true;
+}
+</script>

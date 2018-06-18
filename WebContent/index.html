@@ -1,0 +1,111 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>login</title>
+<style>
+body {
+	background-color: #ACD1E9;
+}
+body h1 {
+	position: absolute;
+	margin-top: 30%;
+	left: 50%;
+	margin-left: -64;
+}
+body table {
+	border:0;
+	position: absolute;
+	border-radius: 10px;
+	left: 50%;
+	top: 30%;
+	margin-left: -150;
+	text-align: center;
+}
+</style>
+</head>
+<body leftmargin="0" topmargin = "0" marginwith = "0" marginheight = "0">
+<h1 style="color:white"><font style = "font-family:고딕">프밍프밍</font></h1>
+<div class = "login-form">
+<table id = "test" width = "80%" cellpadding = "5" cellspacing = "1" bgcolor = "#15E4CC">
+<tr>
+<td colspan = "2" align="center" bgcolor="#C6DAD6"><font color = "#FFFFFF"><B>Sign in</b></font></td>
+</tr>
+<!--아이디-->
+<tr>
+<td width="35%" height="35" align = "center" bgcolor = "#E8D0A9">
+	아이디
+</td>
+<td bgcolor = "white">
+<input id = "id" style="border: 0px" type="text">
+</td>
+</tr>
+<!--비밀번호-->
+<tr>
+<td width="35%" height="35" align = "center" bgcolor = "#E8D0A9">
+	비밀번호
+</td>
+<td bgcolor = "white">
+<input id = "pass" style="border: 0px" type="password">
+</td>
+</tr>
+<tr bgcolor = "#FFFFFF">
+<td height = "30" colspan = 2 align="center" bgcolor="#B7AFA3" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+<a onclick ="login()">login</a>
+<a onclick ="join()">join</a>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+});
+
+function login() {
+	if (check() == false) return;
+	
+	var uid = $("#id").val().trim();	//document.getElementById("id")랑 $("#id")가 같다.
+	var upass = $("#pass").val().trim();
+	
+	var params = "uid=" + uid + "&upass=" + upass;	//중요
+	
+	AJAX.call("index.jsp", params, function(data) {		//중요 http url 형태로 params를 넣는다  function(data)는 jsp에서 out.println() 된 값이 넘어온다
+		var code = data.trim();
+		if (code == "NA") {
+			alert("아이디가 존재하지 않습니다.");
+		}
+		else if (code == "PS") {
+			alert("패스워드가 일치하지 않습니다.");
+		}
+		else if (code == "OK") {
+			alert("로그인되었습니다.");
+			window.location.href = "main.html";
+		}
+	});
+}
+
+function join() {
+	window.location.href = "join.html";
+}
+
+function check() {
+	var uid = $("#id").val().trim();	//JQuery val는 값, trim은 앞뒤 공백을 제외
+	if (uid == "") {
+		alert("아이디를 입력해주세요.");
+		return false;
+	}
+
+	var upass = $("#pass").val().trim();
+	if (upass == "") {
+		alert("패스워드를 입력해주세요.");
+		return false;
+	}
+	return true;
+}
+</script>
